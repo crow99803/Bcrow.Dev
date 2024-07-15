@@ -1,0 +1,193 @@
+body {
+    font-family: Lucida Sans Typewriter;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    color: rgb(47, 49, 49);
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+img.background {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+#intro-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+#hi-text {
+    font-size: 4em;
+    position: relative;
+    display: inline-block;
+    animation: sheen 0.5s ease-out forwards;
+}
+
+@keyframes sheen {
+    0% {
+        opacity: 0;
+        color: white;
+    }
+    50% {
+        opacity: 1;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        background-size: 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: background-pan 0.5s linear infinite;
+    }
+    100% {
+        opacity: 1;
+        color: white;
+    }
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 200%;
+    }
+    to {
+        background-position: -200%;
+    }
+}
+
+#scroll-text {
+    font-size: 2em;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#intro-section:hover #scroll-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+span {
+    color: rgb(70, 218, 218);
+}
+
+span:hover {
+    color: black;
+}
+
+#spacer-section {
+    height: 50vh; /* Adjust this value to control the amount of space */
+}
+
+#project-showcase-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; /* Adjust padding if needed */
+}
+
+#projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.projects {
+    width: 1000px;
+    height: 500px;
+    margin: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.projects:hover .project-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#contact-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#contact-info-section:hover {
+    color: #000;
+}
+
+.contact-title {
+    border-bottom: 3px solid black;
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: -15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    transition: all 0.3s ease;
+    padding: 5px;
+}
+
+.contact-item:hover {
+    background-color: black;
+    color: rgba(170, 244, 235, 1);
+    transition: all 0.4s ease;
+    border: pink;
+    border-radius: 5px;
+}
+
+.contact-item ion-icon {
+    margin-right: 3px;
+}
